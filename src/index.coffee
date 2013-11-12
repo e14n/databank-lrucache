@@ -136,6 +136,21 @@ class LrucacheDatabank extends db.Databank
       
       callback null
 
+  save: (type, id, value, callback) ->
+    
+    if not @lru?
+      callback new db.NotConnectedError()
+      return
+
+    key = keyOf type, id
+    frozen = freeze value
+      
+    setImmediate =>
+
+      @lru.set key, frozen
+      
+      callback null, melt frozen
+      
   scan: (type, onResult, callback) ->
     
     re = new RegExp "^#{type}:"
