@@ -11,7 +11,8 @@
         "posttest": "rm test/*-test.js",
         "build": "coffee -b -c -o lib/ src/*.coffee",
         "prepublish": "coffee -b -c -o lib/ src/*.coffee",
-        "postpublish": "rm lib/*.js"
+        "postpublish": "rm lib/*.js",
+        "clean": "rm -f lib/*.js test/*-test.js *~ lib/*~ src/*~ test/*~"
     },
     "main": "./lib/index.js",
     "directories": {"lib": "./lib/"},
