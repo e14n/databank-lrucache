@@ -1,6 +1,6 @@
 {
     "name": "databank-lrucache",
-    "version": "0.1.0-alpha.1",
+    "version": "0.1.0",
     "engines": {
         "node": ">=0.6.x"
     },
@@ -40,10 +40,10 @@
         "storage", 
         "nosql" 
     ],
-    "homepage": "http://github.com/e14n/databank-lru-cache",
+    "homepage": "http://github.com/e14n/databank-lrucache",
     "bugs": {
-        "web": "http://github.com/e14n/databank-lru-cache/issues"
+        "web": "http://github.com/e14n/databank-lrucache/issues"
     },
     "repository": { "type":  "git",
-                    "url":   "http://github.com/e14n/databank-lru-cache.git" }
+                    "url":   "http://github.com/e14n/databank-lrucache.git" }
 }
