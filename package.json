@@ -6,9 +6,11 @@
     },
     "author": "Evan Prodromou <evan@e14n.com>",
     "scripts": {
+        "pretest": "coffee -c test/*-test.coffee",
         "test": "vows test/*-test.js",
-        "build": "coffee --bare --compile --output lib/ src/*.coffee"
-        "prepublish": "coffee --bare --compile --output lib/ src/*.coffee"
+        "posttest": "rm test/*-test.js",
+        "prepublish": "coffee -b -c -o lib/ src/*.coffee",
+        "postpublish": "rm lib/*.js"
     },
     "main": "./lib/index.js",
     "directories": {"lib": "./lib/"},
