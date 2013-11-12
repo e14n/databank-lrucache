@@ -1,0 +1,41 @@
+{
+    "name": "databank-lru-cache",
+    "version": "0.1.0-alpha.1",
+    "engines": { "node": ">=0.6.x" },
+    "author": "Evan Prodromou <evan@e14n.com>",
+    "scripts": {"test": "vows test/*-test.js"},
+    "main": "./lib/index.js",
+    "directories": {"lib": "./lib/"},
+    "description": "Databank driver for lru-cache",
+    "dependencies": {
+        "databank": "0.19.x",
+        "underscore": "1.5.x",
+        "coffee-script": "1.6.x",
+        "q": "0.9.x",
+        "lru-cache": "2.3.x"
+    },
+    "devDependencies": {
+        "vows": "0.7.x"
+    },
+    "licenses": [
+        {
+            "type": "Apache-2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
+        }
+    ],
+    "keywords": [
+        "databank",
+        "lru-cache",
+        "driver",
+        "lru", 
+        "cache", 
+        "storage", 
+        "nosql" 
+    ],
+    "homepage": "http://github.com/e14n/databank-lru-cache",
+    "bugs": {
+        "web": "http://github.com/e14n/databank-lru-cache/issues"
+    },
+    "repository": { "type":  "git",
+                    "url":   "http://github.com/e14n/databank-lru-cache.git" }
+}
