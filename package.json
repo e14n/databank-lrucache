@@ -1,20 +1,26 @@
 {
     "name": "databank-lru-cache",
     "version": "0.1.0-alpha.1",
-    "engines": { "node": ">=0.6.x" },
+    "engines": {
+        "node": ">=0.6.x"
+    },
     "author": "Evan Prodromou <evan@e14n.com>",
-    "scripts": {"test": "vows test/*-test.js"},
+    "scripts": {
+        "test": "vows test/*-test.js",
+        "build": "coffee --bare --compile --output lib/ src/*.coffee"
+        "prepublish": "coffee --bare --compile --output lib/ src/*.coffee"
+    },
     "main": "./lib/index.js",
     "directories": {"lib": "./lib/"},
     "description": "Databank driver for lru-cache",
     "dependencies": {
         "databank": "0.19.x",
         "underscore": "1.5.x",
-        "coffee-script": "1.6.x",
-        "q": "0.9.x",
-        "lru-cache": "2.3.x"
+        "lru-cache": "2.3.x",
+        "set-immediate": "0.1.x"
     },
     "devDependencies": {
+        "coffee-script": "1.6.x",
         "vows": "0.7.x"
     },
     "licenses": [
