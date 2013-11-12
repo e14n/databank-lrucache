@@ -1,6 +1,6 @@
 {
     "name": "databank-lrucache",
-    "version": "0.1.0",
+    "version": "0.1.1-alpha.1",
     "engines": {
         "node": ">=0.6.x"
     },
@@ -9,6 +9,7 @@
         "pretest": "coffee -c test/*-test.coffee",
         "test": "vows test/*-test.js",
         "posttest": "rm test/*-test.js",
+        "build": "coffee -b -c -o lib/ src/*.coffee",
         "prepublish": "coffee -b -c -o lib/ src/*.coffee",
         "postpublish": "rm lib/*.js"
     },
