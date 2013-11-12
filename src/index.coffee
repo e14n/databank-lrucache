@@ -29,9 +29,6 @@ db = require("databank")
 
 class LrucacheDatabank extends db.Databank
 
-  defaults =
-    length: (item) -> item?.length
-    
   keyOf = (type, id) ->
     "#{type}:#{id}"
 
@@ -51,7 +48,10 @@ class LrucacheDatabank extends db.Databank
       return
       
     setImmediate =>
-      merged = _.extend {}, params, @params, defaults
+      opts =
+        length: (item) -> item?.length
+      merged = _.extend {}, params, @params
+      _.extend opts, _.pick merged, "max", "maxAge"
       @lru = new LRU merged
       callback null
       
