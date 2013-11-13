@@ -10,7 +10,7 @@
         "test": "vows test/*-test.js",
         "posttest": "rm test/*-test.js",
         "build": "coffee -b -c -o lib/ src/*.coffee",
-        "prepublish": "coffee -b -c -o lib/ src/*.coffee",
+        "prepublish": "mkdir -p lib/ && coffee -b -c -o lib/ src/*.coffee",
         "postpublish": "rm lib/*.js",
         "clean": "rm -f lib/*.js test/*-test.js *~ lib/*~ src/*~ test/*~"
     },

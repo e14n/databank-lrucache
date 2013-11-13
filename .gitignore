@@ -11,4 +11,4 @@ logs
 results
 node_modules
 npm-debug.log
-lib
+lib/*.js
