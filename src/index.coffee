@@ -179,4 +179,4 @@ class LrucacheDatabank extends db.Databank
         
     @scan type, match, callback
     
-exports.LrucacheDatabank = LrucacheDatabank
+module.exports = LrucacheDatabank

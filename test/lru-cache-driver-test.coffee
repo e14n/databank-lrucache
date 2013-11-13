@@ -22,7 +22,7 @@ assert = require "assert"
 vows = require "vows"
 databank = require "databank"
 Databank = databank.Databank
-LrucacheDatabank = require("../lib/index").LrucacheDatabank
+LrucacheDatabank = require("../lib/index")
 
 Databank.register "lrucache", LrucacheDatabank
 
