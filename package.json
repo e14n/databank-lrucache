@@ -18,7 +18,7 @@
     "directories": {"lib": "./lib/"},
     "description": "Databank driver for lru-cache",
     "dependencies": {
-        "databank": "0.19.x",
+        "databank": "^0.19.4",
         "underscore": "1.5.x",
         "lru-cache": "2.3.x",
         "set-immediate": "0.1.x"
