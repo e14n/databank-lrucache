@@ -37,10 +37,10 @@
         "databank",
         "lru-cache",
         "driver",
-        "lru", 
-        "cache", 
-        "storage", 
-        "nosql" 
+        "lru",
+        "cache",
+        "storage",
+        "nosql"
     ],
     "homepage": "http://github.com/e14n/databank-lrucache",
     "bugs": {
