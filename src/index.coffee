@@ -1,6 +1,6 @@
 ###
 # index.coffee
-# 
+#
 # Main module for the lru-cache databank driver
 #
 # Copyright 2013 E14N https://e14n.com/
@@ -37,16 +37,16 @@ class LrucacheDatabank extends db.Databank
 
   melt = (str) ->
     JSON.parse str
-    
+
   constructor: (@params) ->
     @schema = @params?.schema
-    
+
   connect: (params, callback) ->
-    
+
     if @lru?
       callback new db.AlreadyConnectedError()
       return
-      
+
     setImmediate =>
       opts =
         length: (item) -> item?.length
@@ -54,78 +54,78 @@ class LrucacheDatabank extends db.Databank
       _.extend opts, _.pick merged, "max", "maxAge"
       @lru = new LRU merged
       callback null
-      
+
   disconnect: (callback) ->
-    
+
     if not @lru?
       callback new db.NotConnectedError()
       return
-      
+
     setImmediate =>
       @lru = null
       callback null
 
   create: (type, id, value, callback) ->
-    
+
     if not @lru?
       callback new db.NotConnectedError()
       return
 
     key = keyOf type, id
     frozen = freeze value
-      
+
     setImmediate =>
-      
+
       if @lru.has key
         callback new db.AlreadyExistsError(type, id)
         return
 
       @lru.set key, frozen
       callback null, melt frozen
-    
+
   read: (type, id, callback) ->
 
     if not @lru?
       callback new db.NotConnectedError()
       return
-      
+
     key = keyOf type, id
-      
+
     setImmediate =>
-      
+
       if not @lru.has key
         callback new db.NoSuchThingError(type, id)
         return
-      
+
       callback null, melt @lru.get key
 
   update: (type, id, value, callback) ->
-    
+
     if not @lru?
       callback new db.NotConnectedError()
       return
 
     key = keyOf type, id
     frozen = freeze value
-      
+
     setImmediate =>
 
       if not @lru.has key
         callback new db.NoSuchThingError(type, id)
         return
-        
+
       @lru.set key, frozen
-      
+
       callback null, melt frozen
 
   del: (type, id, callback) ->
-    
+
     if not @lru?
       callback new db.NotConnectedError()
       return
 
     key = keyOf type, id
-      
+
     setImmediate =>
 
       if not @lru.has key
@@ -133,34 +133,34 @@ class LrucacheDatabank extends db.Databank
         return
 
       @lru.del key
-      
+
       callback null
 
   save: (type, id, value, callback) ->
-    
+
     if not @lru?
       callback new db.NotConnectedError()
       return
 
     key = keyOf type, id
     frozen = freeze value
-      
+
     setImmediate =>
 
       @lru.set key, frozen
-      
+
       callback null, melt frozen
-      
+
   scan: (type, onResult, callback) ->
-    
+
     re = new RegExp "^#{type}:"
 
     keys = _.filter @lru.keys(), (key) -> re.test key
-    
+
     if keys.length is 0
       callback null
       return
-      
+
     setImmediate =>
       err = null
       _.each keys, (key) =>
@@ -172,11 +172,11 @@ class LrucacheDatabank extends db.Databank
       callback err
 
   search: (type, criteria, onResult, callback) ->
-    
+
     match = (value) =>
       if @matchesCriteria value, criteria
         onResult value
-        
+
     @scan type, match, callback
-    
+
 module.exports = LrucacheDatabank
