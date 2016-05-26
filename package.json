@@ -21,7 +21,7 @@
         "databank": "^0.19.4",
         "underscore": "1.5.x",
         "lru-cache": "2.3.x",
-        "set-immediate": "0.1.x"
+        "setimmediate": "^1.0.4"
     },
     "devDependencies": {
         "coffee-script": "1.6.x",

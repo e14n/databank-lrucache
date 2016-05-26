@@ -18,7 +18,7 @@
 # limitations under the License.
 ###
 
-require "set-immediate"
+require "setimmediate"
 
 _ = require "underscore"
 LRU = require "lru-cache"
