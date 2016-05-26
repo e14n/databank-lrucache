@@ -1,51 +1,55 @@
 {
-    "name": "databank-lrucache",
-    "version": "0.1.2",
-    "engines": {
-        "node": ">=0.6.x"
-    },
-    "author": "Evan Prodromou <evan@e14n.com>",
-    "scripts": {
-        "pretest": "coffee -c test/*-test.coffee",
-        "test": "vows test/*-test.js",
-        "posttest": "rm test/*-test.js",
-        "build": "coffee -b -c -o lib/ src/*.coffee",
-        "prepublish": "mkdir -p lib/ && coffee -b -c -o lib/ src/*.coffee",
-        "postpublish": "rm lib/*.js",
-        "clean": "rm -f lib/*.js test/*-test.js *~ lib/*~ src/*~ test/*~"
-    },
-    "main": "./lib/index.js",
-    "directories": {"lib": "./lib/"},
-    "description": "Databank driver for lru-cache",
-    "dependencies": {
-        "databank": "^0.19.4",
-        "underscore": "1.5.x",
-        "lru-cache": "2.3.x",
-        "setimmediate": "^1.0.4"
-    },
-    "devDependencies": {
-        "coffee-script": "1.6.x",
-        "vows": "0.7.x"
-    },
-    "licenses": [
-        {
-            "type": "Apache-2.0",
-            "url": "http://www.apache.org/licenses/LICENSE-2.0"
-        }
-    ],
-    "keywords": [
-        "databank",
-        "lru-cache",
-        "driver",
-        "lru",
-        "cache",
-        "storage",
-        "nosql"
-    ],
-    "homepage": "http://github.com/e14n/databank-lrucache",
-    "bugs": {
-        "web": "http://github.com/e14n/databank-lrucache/issues"
-    },
-    "repository": { "type":  "git",
-                    "url":   "http://github.com/e14n/databank-lrucache.git" }
+  "name": "databank-lrucache",
+  "version": "0.1.2",
+  "engines": {
+    "node": ">=0.6.x"
+  },
+  "author": "Evan Prodromou <evan@e14n.com>",
+  "scripts": {
+    "pretest": "coffee -c test/*-test.coffee",
+    "test": "vows test/*-test.js",
+    "posttest": "rm test/*-test.js",
+    "build": "coffee -b -c -o lib/ src/*.coffee",
+    "prepublish": "mkdir -p lib/ && coffee -b -c -o lib/ src/*.coffee",
+    "postpublish": "rm lib/*.js",
+    "clean": "rm -f lib/*.js test/*-test.js *~ lib/*~ src/*~ test/*~"
+  },
+  "main": "./lib/index.js",
+  "directories": {
+    "lib": "./lib/"
+  },
+  "description": "Databank driver for lru-cache",
+  "dependencies": {
+    "databank": "^0.19.4",
+    "lru-cache": "^4.0.1",
+    "setimmediate": "^1.0.4",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "coffee-script": "^1.10.0",
+    "vows": "^0.8.1"
+  },
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
+  "keywords": [
+    "databank",
+    "lru-cache",
+    "driver",
+    "lru",
+    "cache",
+    "storage",
+    "nosql"
+  ],
+  "homepage": "http://github.com/e14n/databank-lrucache",
+  "bugs": {
+    "web": "http://github.com/e14n/databank-lrucache/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/e14n/databank-lrucache.git"
+  }
 }
