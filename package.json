@@ -20,9 +20,9 @@
   },
   "description": "Databank driver for lru-cache",
   "dependencies": {
-    "databank": "^0.19.4",
-    "lru-cache": "^4.0.1",
-    "setimmediate": "^1.0.4",
+    "databank": "^1.0.1",
+    "lru-cache": "^4.0.2",
+    "setimmediate": "^1.0.5",
     "underscore": "^1.8.3"
   },
   "devDependencies": {
