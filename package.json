@@ -51,5 +51,6 @@
   "repository": {
     "type": "git",
     "url": "http://github.com/e14n/databank-lrucache.git"
-  }
+  },
+  "license": "Apache-2.0"
 }
